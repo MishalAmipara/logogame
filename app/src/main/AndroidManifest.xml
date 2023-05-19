@@ -17,6 +17,10 @@
         <activity
             android:name=".Viewpagedemo"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".Test.Viewpagedemo_Test"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

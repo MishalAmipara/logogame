@@ -37,8 +37,8 @@ public class Viewpagedemo extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewpagedemo);
 
-        viewPager=findViewById(R.id.viewpage);
-        linearLayout=findViewById(R.id.linear);
+        viewPager=findViewById(R.id.viewPager);
+        //linearLayout=findViewById(R.id.linear);
         try {
             images = getAssets().list("test");
             listImages= new ArrayList<String>(Arrays.asList(images));
@@ -58,6 +58,7 @@ public class Viewpagedemo extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onPageSelected(int position) {
                 create(position);
+                t=0;
                 Toast.makeText(Viewpagedemo.this, "pos="+listImages.get(position), Toast.LENGTH_SHORT).show();
 
             }
@@ -113,7 +114,7 @@ public class Viewpagedemo extends AppCompatActivity implements View.OnClickListe
             btn[i].setText(""+arrayList.get(i));
             btn[i].setOnClickListener(Viewpagedemo.this);
         }
-        arrayList.clear();
+        //arrayList.clear();
     }
 
     @Override
@@ -130,6 +131,7 @@ public class Viewpagedemo extends AppCompatActivity implements View.OnClickListe
                         ans_button[t].setText(btn[i].getText());
                         btn[i].setText("");
                         t++;
+                        System.out.println("t="+t);
                     }
                 }
             }
